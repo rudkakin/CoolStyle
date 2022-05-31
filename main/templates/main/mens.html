@@ -1,0 +1,22 @@
+{% extends 'main/object.html' %}
+{% load static %}
+{% block content %}
+    {% for element in mens %}
+        <div class="cont">
+            <div class="grid_img">
+                <img src={{ element.image }} class="img-fluid" alt="...">
+            </div>
+            <div class=" grid_name">
+                <h1 class="txt_main">{{ element.title }}</h1>
+            </div>
+            <div class=" grid_price">
+                <h1 class="txt_main">{{ element.price }}</h1>
+            </div>
+            <div class=" grid_name_s">
+                <h1 class="txt_main">{{ element.composition }}</h1>
+            </div>
+            <div class="grid_del"> <img src="{% static 'main/img/plus.svg' %}" class="backet" alt="...">
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

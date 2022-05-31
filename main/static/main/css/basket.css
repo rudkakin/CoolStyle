@@ -1,0 +1,81 @@
+#header {
+    margin-bottom: 1%;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background: rgb(255, 255, 255);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(rgb(44, 44, 44), black, rgb(44, 44, 44));
+    border: 2px solid #000000;
+}
+
+.grid_img {
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    grid-column: 1/2;
+    width: 50%;
+    grid-row: 1/2;
+    /* background-color: red; */
+    /* grid-area: img; */
+}
+
+.grid_name {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    /* grid-area: name; */
+}
+
+.grid_name_s {
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+.grid_price {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    /* grid-area: price; */
+}
+
+.grid_del {
+    margin: auto;
+    grid-column: 3;
+    grid-row: 1/4;
+    /* grid-area: del; */
+}
+
+.osnova {}
+
+.cont {
+    display: grid;
+    height: auto;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgba(0, 0, 0, 0.861); */
+    border: 4px outset black;
+    border-radius: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 50px 50px; */
+    /* grid-template-areas: 'img img name .' 'img .  price del' '. . . .'; */
+}
+
+.txt_name_bascket {
+    text-align: center;
+    font-family: 'Oswald';
+}
+
+.txt_main {
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald';
+    font-size: 21px;
+    text-align: center;
+}
+
+.backet {}

@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolStyle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/shopmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/basket.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/object.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/menu.css' %}">
+</head>
+
+<body>
+    <div class="fl_cont">
+        <header id="header">
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background:black">
+                <div class="container">
+                    <a href="{% url 'home' %}" class="navbar-brand icon">CoolStyle</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="{% static 'main/img/menu.svg' %}" class="img-fluid" alt="...">
+                </button>
+                    <div class="collapse navbar-collapse" id="navContent">
+                        <ul class="navbar-nav cont_category">
+                            <li class="nav-item category">
+                                <a href="{% url 'mens' %}" class="nav-link">МУЖСКАЯ</a></li>
+                            <!-- нужно добавить списки -->
+                            <li class="nav-item category">
+                                <a href="{% url 'womens' %}" class="nav-link">ЖЕНСКАЯ</a></li>
+                            <!-- нужно добавить списки -->
+                            <li class="nav-item category">
+                                <a href="{% url 'kids' %}" class="nav-link">ДЕТСКАЯ</a></li>
+                            <!-- нужно добавить списки -->
+
+                        </ul>
+                        <ul class="navbar-nav cont_category">
+                            <li class="nav-item category">
+                                <a href="{% url 'basket' %}" class="navbar-navlink nav-link"><img src="{% static 'main/img/Groupshop.svg' %}" class="bucket" alt="..."></a>
+                            </li>
+                            <div class="button">
+                                <li class="nav-item category"> <a href="#" id="open_pop_up" class="navbar-nav txt_reg nav-link">
+                                    ВОЙТИ
+                                </a></li>
+                                </div>
+                                <div class="button_reg">
+                                <li class="nav-item category"> <a href="#" id="open_pop_up_reg" class="navbar-nav txt_reg nav-link">
+                                    РЕГИСТРАЦИЯ
+                                </a></li>
+                                </div>
+                                <div class="pop_up" id="pop_up">
+                                    <div class="pop_up_container">
+                                        <div class="pop_up_body" id="pop_up_body">
+                                            <p>Вход</p>
+                                            <form action="">
+                                                <input type="text" placeholder="Логин">
+                                                <input type="text" placeholder="Пароль">
+                                                <button>Войти</button>
+                                            </form>
+                                            <div class="pop_up_close" id="pop_up_close">&#10008</div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="pop_up_reg" id="pop_up_reg">
+                                    <div class="pop_up_reg_container">
+                                        <div class="pop_up_reg_body" id="pop_up_reg_body">
+                                            <p>Регистрация</p>
+                                            <form action="">
+                                                <input type="text" placeholder="Введите почту">
+                                                <input type="text" placeholder="Введите номер телефона">
+                                                <input type="text" placeholder="Введите логин">
+                                                <input type="text" placeholder="Введите пароль">
+                                                <input type="text" placeholder="Повторите пароль">
+                                                <button>Зарегистрироваться</button>
+                                            </form>
+                                            <div class="pop_up_reg_close" id="pop_up_reg_close">&#10008</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <section class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="d-flex align-items-center justify-content-center">
+
+                <div class="container osnova">
+                    <h1 class="nav-item category txt_name_bascket">Магазин:</h1>
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="navbar navbar-expand-lg navbar-dark" style="background:black">
+                <div class="container">
+                    <a href="{% url 'home' %}" class="navbar-brand icon">CoolStyle</a>
+
+                    <ul class="navbar-nav cont_category footer_left_attrs">
+                        <li class="nav-item category"></li> <a href="#" class="navbar-nav txt_reg nav-link">
+                        почта: levpr2002@gmail.ru
+                        </a></li>
+                        <li class="nav-item category"></li> <a href="#" class="navbar-nav txt_reg nav-link">
+                        номер: +7-977-379-90-71
+                    </a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{% static 'main/js/menu.js' %}"></script>
+    <script src="{% static 'main/js/reg.js' %}"></script>
+</body>
+
+</html>
